@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geek Coffee Shop - Menü</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+        }
+        
+        .menu-card {
+            background: white;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+        
+        .menu-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px -12px rgba(139, 92, 246, 0.4);
+        }
+        
+        .category-btn {
+            transition: all 0.3s ease;
+        }
+        
+        .category-btn.active {
+            background: linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%);
+            color: white;
+        }
+        
+        .price-tag {
+            background: linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%);
+        }
+        
+        .menu-header {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+        }
+    </style>
+</head>
+<body class="p-4 md:p-8 min-h-screen">
+    <div class="max-w-6xl mx-auto">
+        <!-- Header -->
+        <div class="menu-header rounded-2xl p-8 mb-8 text-center">
+            <div class="inline-block bg-purple-600 p-4 rounded-full mb-4">
+                <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                </svg>
+            </div>
+            <h1 class="text-5xl font-bold text-white mb-2">Geek Coffee Shop</h1>
+            <p class="text-xl text-gray-300">Menümüz</p>
+        </div>
+
+        <!-- Category Filter -->
+        <div class="flex flex-wrap gap-3 justify-center mb-8">
+            <button class="category-btn active px-6 py-3 rounded-full font-semibold bg-white text-gray-700" data-category="all">
+                Tümü
+            </button>
+            <button class="category-btn px-6 py-3 rounded-full font-semibold bg-white text-gray-700" data-category="coffee">
+                ☕ Kahveler
+            </button>
+            <button class="category-btn px-6 py-3 rounded-full font-semibold bg-white text-gray-700" data-category="cold">
+                🧊 Soğuk İçecekler
+            </button>
+            <button class="category-btn px-6 py-3 rounded-full font-semibold bg-white text-gray-700" data-category="dessert">
+                🍰 Tatlılar
+            </button>
+            <button class="category-btn px-6 py-3 rounded-full font-semibold bg-white text-gray-700" data-category="snack">
+                🥪 Atıştırmalıklar
+            </button>
+        </div>
+
+        <!-- Menu Grid -->
+        <div id="menuGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Espresso -->
+            <div class="menu-card" data-category="coffee">
+                <div class="h-48 bg-gradient-to-br from-amber-900 to-amber-700 flex items-center justify-center">
+                    <span class="text-6xl">☕</span>
+                </div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-3">
+                        <h3 class="text-xl font-bold text-gray-900">Espresso</h3>
+                        <span class="price-tag text-white px-3 py-1 rounded-full text-sm font-semibold">₺45</span>
+                    </div>
+                    <p class="text-gray-600 text-sm">Yoğun aromalı, klasik İtalyan espresso</p>
+                </div>
+            </div>
+
+            <!-- Americano -->
+            <div class="menu-card" data-category="coffee">
+                <div class="h-48 bg-gradient-to-br from-amber-800 to-amber-600 flex items-center justify-center">
+                    <span class="text-6xl">☕</span>
+                </div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-3">
+                        <h3 class="text-xl font-bold text-gray-900">Americano</h3>
+                        <span class="price-tag text-white px-3 py-1 rounded-full text-sm font-semibold">₺50</span>
+                    </div>
+                    <p class="text-gray-600 text-sm">Espresso ve sıcak su karışımı</p>
+                </div>
+            </div>
+
+            <!-- Cappuccino -->
+            <div class="menu-card" data-category="coffee">
+                <div class="h-48 bg-gradient-to-br from-amber-700 to-orange-500 flex items-center justify-center">
+                    <span class="text-6xl">☕</span>
+                </div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-3">
+                        <h3 class="text-xl font-bold text-gray-900">Cappuccino</h3>
+                        <span class="price-tag text-white px-3 py-1 rounded-full text-sm font-semibold">₺60</span>
+                    </div>
+                    <p class="text-gray-600 text-sm">Espresso, süt ve süt köpüğü</p>
+                </div>
+            </div>
+
+            <!-- Latte -->
+            <div class="menu-card" data-category="coffee">
+                <div class="h-48 bg-gradient-to-br from-orange-400 to-amber-500 flex items-center justify-center">
+                    <span class="text-6xl">☕</span>
+                </div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-3">
+                        <h3 class="text-xl font-bold text-gray-900">Caffe Latte</h3>
+                        <span class="price-tag text-white px-3 py-1 rounded-full text-sm font-semibold">₺65</span>
+                    </div>
+                    <p class="text-gray-600 text-sm">Kremsi süt ve espresso</p>
+                </div>
+            </div>
+
+            <!-- Mocha -->
+            <div class="menu-card" data-category="coffee">
+                <div class="h-48 bg-gradient-to-br from-amber-900 to-red-900 flex items-center justify-center">
+                    <span class="text-6xl">🍫</span>
+                </div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-3">
+                        <h3 class="text-xl font-bold text-gray-900">Mocha</h3>
+                        <span class="price-tag text-white px-3 py-1 rounded-full text-sm font-semibold">₺70</span>
+                    </div>
+                    <p class="text-gray-600 text-sm">Çikolata, espresso ve süt</p>
+                </div>
+            </div>
+
+            <!-- Cold Brew -->
+            <div class="menu-card" data-category="cold">
+                <div class="h-48 bg-gradient-to-br from-blue-400 to-cyan-600 flex items-center justify-center">
+                    <span class="text-6xl">🧊</span>
+                </div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-3">
+                        <h3 class="text-xl font-bold text-gray-900">Cold Brew</h3>
+                        <span class="price-tag text-white px-3 py-1 rounded-full text-sm font-semibold">₺75</span>
+                    </div>
+                    <p class="text-gray-600 text-sm">12 saat soğuk demleme</p>
+                </div>
+            </div>
+
+            <!-- Iced Latte -->
+            <div class="menu-card" data-category="cold">
+                <div class="h-48 bg-gradient-to-br from-blue-300 to-indigo-400 flex items-center justify-center">
+                    <span class="text-6xl">🧋</span>
+                </div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-3">
+                        <h3 class="text-xl font-bold text-gray-900">Iced Latte</h3>
+                        <span class="price-tag text-white px-3 py-1 rounded-full text-sm font-semibold">₺70</span>
+                    </div>
+                    <p class="text-gray-600 text-sm">Buzlu cafe latte</p>
+                </div>
+            </div>
+
+            <!-- Frappe -->
+            <div class="menu-card" data-category="cold">
+                <div class="h-48 bg-gradient-to-br from-teal-400 to-cyan-500 flex items-center justify-center">
+                    <span class="text-6xl">🥤</span>
+                </div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-3">
+                        <h3 class="text-xl font-bold text-gray-900">Frappe</h3>
+                        <span class="price-tag text-white px-3 py-1 rounded-full text-sm font-semibold">₺75</span>
+                    </div>
+                    <p class="text-gray-600 text-sm">Buzlu ve köpüklü kahve</p>
+                </div>
+            </div>
+
+            <!-- Cheesecake -->
+            <div class="menu-card" data-category="dessert">
+                <div class="h-48 bg-gradient-to-br from-yellow-200 to-orange-300 flex items-center justify-center">
+                    <span class="text-6xl">🍰</span>
+                </div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-3">
+                        <h3 class="text-xl font-bold text-gray-900">Cheesecake</h3>
+                        <span class="price-tag text-white px-3 py-1 rounded-full text-sm font-semibold">₺85</span>
+                    </div>
+                    <p class="text-gray-600 text-sm">Klasik New York cheesecake</p>
+                </div>
+            </div>
+
+            <!-- Brownie -->
+            <div class="menu-card" data-category="dessert">
+                <div class="h-48 bg-gradient-to-br from-amber-800 to-red-900 flex items-center justify-center">
+                    <span class="text-6xl">🍫</span>
+                </div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-3">
+                        <h3 class="text-xl font-bold text-gray-900">Brownie</h3>
+                        <span class="price-tag text-white px-3 py-1 rounded-full text-sm font-semibold">₺65</span>
+                    </div>
+                    <p class="text-gray-600 text-sm">Çikolatalı ve fındıklı</p>
+                </div>
+            </div>
+
+            <!-- Croissant -->
+            <div class="menu-card" data-category="snack">
+                <div class="h-48 bg-gradient-to-br from-yellow-400 to-amber-500 flex items-center justify-center">
+                    <span class="text-6xl">🥐</span>
+                </div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-3">
+                        <h3 class="text-xl font-bold text-gray-900">Croissant</h3>
+                        <span class="price-tag text-white px-3 py-1 rounded-full text-sm font-semibold">₺55</span>
+                    </div>
+                    <p class="text-gray-600 text-sm">Tereyağlı Fransız kruvasanı</p>
+                </div>
+            </div>
+
+            <!-- Sandwich -->
+            <div class="menu-card" data-category="snack">
+                <div class="h-48 bg-gradient-to-br from-green-400 to-emerald-600 flex items-center justify-center">
+                    <span class="text-6xl">🥪</span>
+                </div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-3">
+                        <h3 class="text-xl font-bold text-gray-900">Club Sandwich</h3>
+                        <span class="price-tag text-white px-3 py-1 rounded-full text-sm font-semibold">₺95</span>
+                    </div>
+                    <p class="text-gray-600 text-sm">Tavuk, marul, domates</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Category filtering
+        const categoryBtns = document.querySelectorAll('.category-btn');
+        const menuCards = document.querySelectorAll('.menu-card');
+
+        categoryBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Update active button
+                categoryBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                // Filter cards
+                const category = btn.dataset.category;
+                menuCards.forEach(card => {
+                    if (category === 'all' || card.dataset.category === category) {
+                        card.style.display = 'block';
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                            card.style.transform = 'scale(1)';
+                        }, 10);
+                    } else {
+                        card.style.opacity = '0';
+                        card.style.transform = 'scale(0.9)';
+                        setTimeout(() => {
+                            card.style.display = 'none';
+                        }, 300);
+                    }
+                });
+            });
+        });
+
+        // Initialize card animations
+        menuCards.forEach(card => {
+            card.style.transition = 'all 0.3s ease';
+        });
+    </script>
+</body>
+</html>

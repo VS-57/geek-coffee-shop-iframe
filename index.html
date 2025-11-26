@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geek Coffee Shop - iframe Test</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .iframe-container {
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-gray-100 p-8">
+    <div class="max-w-7xl mx-auto">
+        <h1 class="text-4xl font-bold text-center mb-2 text-gray-900">Geek Coffee Shop iframe Önizleme</h1>
+        <p class="text-center text-gray-600 mb-12">Bu sayfalar farklı sitelerde iframe içinde kullanılabilir</p>
+        
+        <div class="grid md:grid-cols-2 gap-8">
+            <!-- Franchise Form iframe -->
+            <div>
+                <h2 class="text-2xl font-bold mb-4 text-gray-800">1. Franchise Başvuru Formu</h2>
+                <div class="iframe-container bg-white">
+                    <iframe src="franchise-form.html" 
+                            class="w-full h-[600px] border-0"
+                            title="Franchise Başvuru Formu"></iframe>
+                </div>
+                <div class="mt-4 p-4 bg-blue-50 rounded-lg">
+                    <p class="text-sm text-gray-700"><strong>iframe kodu:</strong></p>
+                    <code class="text-xs bg-white p-2 block mt-2 rounded">
+                        &lt;iframe src="franchise-form.html" width="100%" height="600" frameborder="0"&gt;&lt;/iframe&gt;
+                    </code>
+                </div>
+            </div>
+
+            <!-- Menu iframe -->
+            <div>
+                <h2 class="text-2xl font-bold mb-4 text-gray-800">2. Menü Sayfası</h2>
+                <div class="iframe-container bg-white">
+                    <iframe src="menu.html" 
+                            class="w-full h-[600px] border-0"
+                            title="Menü"></iframe>
+                </div>
+                <div class="mt-4 p-4 bg-blue-50 rounded-lg">
+                    <p class="text-sm text-gray-700"><strong>iframe kodu:</strong></p>
+                    <code class="text-xs bg-white p-2 block mt-2 rounded">
+                        &lt;iframe src="menu.html" width="100%" height="600" frameborder="0"&gt;&lt;/iframe&gt;
+                    </code>
+                </div>
+            </div>
+        </div>
+
+        <!-- Usage Info -->
+        <div class="mt-12 p-6 bg-purple-50 rounded-2xl">
+            <h3 class="text-xl font-bold mb-3 text-gray-900">📝 Kullanım Talimatları</h3>
+            <ul class="space-y-2 text-gray-700">
+                <li>✅ Her iki HTML dosyası da tamamen bağımsızdır</li>
+                <li>✅ Farklı sitelerde iframe içinde kullanılabilir</li>
+                <li>✅ Responsive tasarım - mobil ve masaüstü uyumlu</li>
+                <li>✅ Tailwind CSS CDN kullanıyor - ekstra dosya gerekmez</li>
+                <li>✅ Form gönderimleri JavaScript ile yönetiliyor</li>
+                <li>✅ Menü kategorileri dinamik filtrelenebilir</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
